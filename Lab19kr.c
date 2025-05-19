@@ -15,42 +15,42 @@ void processArray(double arr[], int size, double* res1, double* res2, double* re
         s += arr[i];
     }
 
-    if (type == 'N') { // Calculate A, B, C
+    if (type == 'N') {
         double sum_val_sin_val = 0.0;
         for (int i = 0; i < size; i++) {
             sum_val_sin_val += arr[i] * sin(arr[i]);
         }
-        *res1 = s * sum_val_sin_val; // A
+        *res1 = s * sum_val_sin_val;
 
         double prod_val_sin_val = 1.0;
         for (int i = 0; i < size; i++) {
             prod_val_sin_val *= arr[i] * sin(arr[i]);
         }
-        *res2 = prod_val_sin_val; // B
+        *res2 = prod_val_sin_val;
 
         double sum_val_cos_val = 0.0;
         for (int i = 0; i < size; i++) {
             sum_val_cos_val += arr[i] * cos(arr[i]);
         }
-        *res3 = s * sum_val_cos_val; // C
-    } else if (type == 'D') { // Calculate D, E, F
+        *res3 = s * sum_val_cos_val;
+    } else if (type == 'D') {
         double sum_val_tan_val = 0.0;
         for (int i = 0; i < size; i++) {
             sum_val_tan_val += arr[i] * tan(arr[i]);
         }
-        *res1 = s * sum_val_tan_val; // D
+        *res1 = s * sum_val_tan_val;
 
         double prod_val_cos_val = 1.0;
         for (int i = 0; i < size; i++) {
             prod_val_cos_val *= arr[i] * cos(arr[i]);
         }
-        *res2 = prod_val_cos_val; // E
+        *res2 = prod_val_cos_val;
 
         double sum_val_sin_val_denom = 0.0;
         for (int i = 0; i < size; i++) {
             sum_val_sin_val_denom += arr[i] * sin(arr[i]);
         }
-        *res3 = s * sum_val_sin_val_denom; // F
+        *res3 = s * sum_val_sin_val_denom;
     }
 }
 
